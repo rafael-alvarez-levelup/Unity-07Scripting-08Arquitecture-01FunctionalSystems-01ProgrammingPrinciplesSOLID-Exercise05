@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-[RequireComponent(typeof(HealBehaviour))]
 public class HealOnTriggerEnterLayerController : OnTriggerEnterLayerControllerBase
 {
-    private HealBehaviour healBehaviour;
+    private IDoHealable doHealable;
 
     private void Awake()
     {
-        healBehaviour = GetComponent<HealBehaviour>();
+        doHealable = GetComponent<IDoHealable>();
     }
 
     protected override void React(Collider other)
@@ -17,6 +16,6 @@ public class HealOnTriggerEnterLayerController : OnTriggerEnterLayerControllerBa
 
         Assert.IsNotNull(target, $"{other.gameObject.name} doesn't implement IHealable interface");
 
-        healBehaviour.Heal(target);
+        doHealable.DoHeal(target);
     }
 }

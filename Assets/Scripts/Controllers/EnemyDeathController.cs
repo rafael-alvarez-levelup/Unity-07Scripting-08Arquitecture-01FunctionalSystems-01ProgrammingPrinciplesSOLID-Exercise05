@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(EnemyHealthBehaviour), typeof(AddScoreBehaviour))]
 public class EnemyDeathController : MonoBehaviour
 {
     private EnemyHealthBehaviour enemyHealthBehaviour;
-    private AddScoreBehaviour addScoreBehaviour;
+    private IAddScorable addScorable;
     private ScoreManager scoreManager;
 
     private void Awake()
     {
         enemyHealthBehaviour = GetComponent<EnemyHealthBehaviour>();
-        addScoreBehaviour = GetComponent<AddScoreBehaviour>();
+        addScorable = GetComponent<IAddScorable>();
 
         scoreManager = FindObjectOfType<ScoreManager>();
     }
@@ -27,6 +26,6 @@ public class EnemyDeathController : MonoBehaviour
 
     private void EnemyHealthBehaviour_OnEnemyDeath()
     {
-        addScoreBehaviour.AddScore(scoreManager);
+        addScorable.AddScore(scoreManager);
     }
 }

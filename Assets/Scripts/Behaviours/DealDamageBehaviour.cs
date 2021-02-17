@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DealDamageBehaviour : MonoBehaviour
+public class DealDamageBehaviour : MonoBehaviour, IDealDamageable
 {
     [SerializeField] private DamageData damageData;
 

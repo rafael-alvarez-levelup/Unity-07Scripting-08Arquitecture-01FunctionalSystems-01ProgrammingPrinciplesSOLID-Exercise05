@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(PlayerHealthBehaviour))]
 public class PlayerHealthChangedController : MonoBehaviour
 {
     private PlayerHealthBehaviour playerHealthBehaviour;

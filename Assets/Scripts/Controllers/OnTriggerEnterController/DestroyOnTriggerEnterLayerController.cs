@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(DestroyBehaviour))]
 public class DestroyOnTriggerEnterLayerController : OnTriggerEnterLayerControllerBase
 {
-    private DestroyBehaviour destroyBehaviour;
+    private IDestroyable destroyable;
 
     private void Awake()
     {
-        destroyBehaviour = GetComponent<DestroyBehaviour>();
+        destroyable = GetComponent<IDestroyable>();
     }
 
     protected override void React(Collider other)
     {
-        destroyBehaviour.Destroy();
+        destroyable.Destroy();
     }
 }

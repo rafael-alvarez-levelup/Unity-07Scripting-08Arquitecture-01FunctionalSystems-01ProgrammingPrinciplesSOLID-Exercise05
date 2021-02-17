@@ -21,7 +21,7 @@ public class PlayerHealthBehaviour : HealthBehaviour, IHealable
         {
             currentHealth = Math.Min(currentHealth + amount, healthData.Health);
 
-            spawnGameObjectBehaviour.Spawn(healEffectPrefab, transform.position, transform.rotation);
+            gameObjectSpawnable.Spawn(healEffectPrefab, transform.position, transform.rotation);
 
             PlayerHealthChanged();
         }
@@ -29,7 +29,6 @@ public class PlayerHealthBehaviour : HealthBehaviour, IHealable
 
     private void PlayerHealthChanged()
     {
-        // Could insert silent bugs. Use assertion?
         if (OnPlayerHealthChanged != null)
         {
             OnPlayerHealthChanged.Invoke(currentHealth, healthData.Health);

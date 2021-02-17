@@ -17,7 +17,7 @@ public class WeaponShell : WeaponBase
 
             Vector3 direction = firePoint.rotation * new Vector2(Mathf.Sin(radians), Mathf.Cos(radians));
 
-            GameObject shell = spawnGameObjectBehaviour.Spawn(prefab, firePoint.position, Quaternion.Euler(direction));
+            GameObject shell = gameObjectSpawnable.Spawn(prefab, firePoint.position, Quaternion.Euler(direction));
 
             ShellBehaviour shellBehaviour = shell.GetComponent<ShellBehaviour>();
 

@@ -4,11 +4,11 @@ using UnityEngine.Assertions;
 [RequireComponent(typeof(DealDamageBehaviour))]
 public class DealDamageOnTriggerEnterLayerController : OnTriggerEnterLayerControllerBase
 {
-    private DealDamageBehaviour dealDamageBehaviour;
+    private IDealDamageable dealDamageable;
 
     private void Awake()
     {
-        dealDamageBehaviour = GetComponent<DealDamageBehaviour>();
+        dealDamageable = GetComponent<IDealDamageable>();
     }
 
     protected override void React(Collider other)
@@ -17,6 +17,6 @@ public class DealDamageOnTriggerEnterLayerController : OnTriggerEnterLayerContro
 
         Assert.IsNotNull(target, $"{other.gameObject.name} doesn't implement IDamageable interface");
 
-        dealDamageBehaviour.DealDamage(target);
+        dealDamageable.DealDamage(target);
     }
 }

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class AddScoreBehaviour : MonoBehaviour
+public class AddScoreBehaviour : MonoBehaviour, IAddScorable
 {
     [SerializeField] private int score;
 
-    public void AddScore(IScorable scorer)
+    public void AddScore(IScorable scorable)
     {
-        scorer.AddScore(score);
+        scorable.AddScore(score);
     }
 }

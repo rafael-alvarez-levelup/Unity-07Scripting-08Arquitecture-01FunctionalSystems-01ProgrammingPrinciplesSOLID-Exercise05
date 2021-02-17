@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MovementBehaviour : MonoBehaviour
+public class RigidbodyMovementBehaviour : MonoBehaviour, IMovable
 {
     [SerializeField] private SpeedData speedData;
 

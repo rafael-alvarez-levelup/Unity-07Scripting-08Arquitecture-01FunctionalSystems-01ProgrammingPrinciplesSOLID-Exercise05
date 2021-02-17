@@ -5,7 +5,7 @@ public class WeaponLaser : WeaponBase
 {
     public override void Fire(Transform firePoint)
     {
-        GameObject laser = spawnGameObjectBehaviour.Spawn(prefab, firePoint.position, firePoint.rotation);
+        GameObject laser = gameObjectSpawnable.Spawn(prefab, firePoint.position, firePoint.rotation);
 
         LaserBehaviour laserBehaviour = laser.GetComponent<LaserBehaviour>();
 

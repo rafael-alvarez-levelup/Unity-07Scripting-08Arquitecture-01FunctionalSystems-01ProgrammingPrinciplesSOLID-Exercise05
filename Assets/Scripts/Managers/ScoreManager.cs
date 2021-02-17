@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(UpdateScoreBehaviour))]
 public class ScoreManager : MonoBehaviour, IScorable
 {
     private UpdateScoreBehaviour updateScoreBehaviour;

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-public class HealBehaviour : MonoBehaviour
+public class HealBehaviour : MonoBehaviour, IDoHealable
 {
     [SerializeField] private HealingData healData;
 
-    public void Heal(IHealable target)
+    public void DoHeal(IHealable target)
     {
         target.Heal(healData.Healing);
     }

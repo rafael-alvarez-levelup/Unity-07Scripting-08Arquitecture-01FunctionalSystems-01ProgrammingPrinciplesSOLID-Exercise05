@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(MovementBehaviour), typeof(EngineBehaviour))]
-public class InputMovementController : MonoBehaviour
+public class InputRigidbodyMovementController : MonoBehaviour
 {
-    private MovementBehaviour movementBehaviour;
+    private RigidbodyMovementBehaviour rigidbodyMovementBehaviour;
     private EngineBehaviour engineBehaviour;
     private float horizontalMovement;
 
     private void Awake()
     {
-        movementBehaviour = GetComponent<MovementBehaviour>();
+        rigidbodyMovementBehaviour = GetComponent<RigidbodyMovementBehaviour>();
         engineBehaviour = GetComponent<EngineBehaviour>();
     }
 
@@ -23,6 +22,6 @@ public class InputMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         // Already handles a null velocity.
-        movementBehaviour.Move(transform.right * horizontalMovement);
+        rigidbodyMovementBehaviour.Move(transform.right * horizontalMovement);
     }
 }

@@ -6,13 +6,13 @@ public abstract class WeaponBase : MonoBehaviour
 
     [SerializeField] private float fireRate;
 
-    protected SpawnGameObjectBehaviour spawnGameObjectBehaviour;
+    protected IGameObjectSpawnable gameObjectSpawnable;
 
     private float nextFireTime;
 
     private void Awake()
     {
-        spawnGameObjectBehaviour = GetComponent<SpawnGameObjectBehaviour>();
+        gameObjectSpawnable = GetComponent<IGameObjectSpawnable>();
     }
 
     public abstract void Fire(Transform firePoint);
