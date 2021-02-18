@@ -2,7 +2,7 @@
 
 public class ContinuousRigidbodyMovementController : MonoBehaviour
 {
-    private RigidbodyMovementBehaviour rigidbodyMovementBehaviour;
+    private IMovable rigidbodyMovementBehaviour;
 
     private void Awake()
     {

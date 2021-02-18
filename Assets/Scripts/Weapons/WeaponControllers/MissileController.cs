@@ -4,8 +4,8 @@
 public class MissileController : MonoBehaviour
 {
     private SearchNearestTargetBehaviour searchBehaviour;
-    private MoveToTargetBehaviour moveToTargetBehaviour;
-    private LookAtTargetBehaviour lookAtTargetBehaviour;
+    private IMoveToTarget moveToTargetBehaviour;
+    private ILookAtTarget lookAtTargetBehaviour;
 
     private void Awake()
     {

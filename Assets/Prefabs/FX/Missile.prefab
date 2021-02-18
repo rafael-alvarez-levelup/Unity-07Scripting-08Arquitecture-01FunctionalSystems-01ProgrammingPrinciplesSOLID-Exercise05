@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8027666936317447660}
   - component: {fileID: 8445712041258394491}
   - component: {fileID: 1644819119623332416}
-  - component: {fileID: 1732871942783851870}
+  - component: {fileID: 7258525931647340787}
   - component: {fileID: 6440795849865679854}
   - component: {fileID: 7209382098211300992}
   - component: {fileID: 5706584072826765568}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageData: {fileID: 11400000, guid: 89dd38fd334684c4c869792c76667d4a, type: 2}
---- !u!114 &1732871942783851870
+--- !u!114 &7258525931647340787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 472527021832427138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ea3696d2116b648b555a8324036a9a, type: 3}
+  m_Script: {fileID: 11500000, guid: e3f7761c458d2b847907de3891859124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6440795849865679854

@@ -4,7 +4,7 @@ public class EnemyDeathController : MonoBehaviour
 {
     private EnemyHealthBehaviour enemyHealthBehaviour;
     private IAddScorable addScorable;
-    private ScoreManager scoreManager;
+    private IScorable scoreManager;
 
     private void Awake()
     {

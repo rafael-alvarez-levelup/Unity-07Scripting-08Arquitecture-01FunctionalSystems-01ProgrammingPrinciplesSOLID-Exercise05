@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(Rigidbody))]
 public class RigidbodyMovementBehaviour : MonoBehaviour, IMovable
@@ -14,6 +15,8 @@ public class RigidbodyMovementBehaviour : MonoBehaviour, IMovable
 
     public void Move(Vector3 direction)
     {
+        Assert.IsTrue(Time.inFixedTimeStep);
+
         // Must handle a null velocity.
         myRigidbody.velocity = direction * speedData.Speed;
     }

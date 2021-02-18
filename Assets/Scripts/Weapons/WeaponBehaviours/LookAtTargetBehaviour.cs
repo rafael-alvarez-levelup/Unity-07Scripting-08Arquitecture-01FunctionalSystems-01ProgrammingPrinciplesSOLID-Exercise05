@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class LookAtTargetBehaviour : MonoBehaviour
+public class LookAtTargetBehaviour : MonoBehaviour, ILookAtTarget
 {
     [SerializeField] private float rotationSpeed = 10f;
 
