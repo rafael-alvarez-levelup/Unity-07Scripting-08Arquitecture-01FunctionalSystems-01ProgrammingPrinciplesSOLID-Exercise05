@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class OnTriggerEnterLayerControllerBase: MonoBehaviour
+public abstract class OnTriggerEnterLayerControllerBase : MonoBehaviour
 {
     [SerializeField] private LayerMask triggerMask;
 
@@ -11,7 +11,7 @@ public abstract class OnTriggerEnterLayerControllerBase: MonoBehaviour
 
     private void CheckLayer(Collider other)
     {
-        if (Utilities.ContainsLayer(triggerMask, other.gameObject.layer))
+        if (HelperFunctions.ContainsLayer(triggerMask, other.gameObject.layer))
         {
             React(other);
         }

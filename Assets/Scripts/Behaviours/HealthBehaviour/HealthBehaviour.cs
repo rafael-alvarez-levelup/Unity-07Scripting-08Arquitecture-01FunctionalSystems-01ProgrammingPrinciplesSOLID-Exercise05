@@ -4,18 +4,19 @@ using UnityEngine;
 public class HealthBehaviour : MonoBehaviour, IDamageable
 {
     [SerializeField] protected HealthData healthData;
+
     [SerializeField] private GameObject damageEffectPrefab;
     [SerializeField] private GameObject explosionPrefab;
 
     protected int currentHealth;
     protected IGameObjectSpawnable gameObjectSpawnable;
 
-    private IDestroyable destroyable;
+    private ISelfDestroyable destroyable;
 
     private void Awake()
     {
         gameObjectSpawnable = GetComponent<IGameObjectSpawnable>();
-        destroyable = GetComponent<IDestroyable>();
+        destroyable = GetComponent<ISelfDestroyable>();
 
         currentHealth = healthData.Health;
     }

@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerHealthBehaviour : HealthBehaviour, IHealable
+public class PlayerHealthBehaviour : HealthBehaviour, IHealable, IOnPlayerHealthChanged
 {
-    public delegate void OnPlayerHealthChangedEventHandler(int currentHealth, int maxHealth);
     public event OnPlayerHealthChangedEventHandler OnPlayerHealthChanged;
 
     [SerializeField] private GameObject healEffectPrefab;

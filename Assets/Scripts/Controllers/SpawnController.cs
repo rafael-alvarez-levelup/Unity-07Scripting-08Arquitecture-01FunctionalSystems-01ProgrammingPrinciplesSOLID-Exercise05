@@ -45,7 +45,7 @@ public class SpawnController : MonoBehaviour
 
             foreach (GameObject member in wave.Sequence)
             {
-                Transform pointToSpawn = spawnPoints[Utilities.GetRandomIndex(0, spawnPoints.Count)];
+                Transform pointToSpawn = spawnPoints[HelperFunctions.GetRandomIndex(0, spawnPoints.Count)];
 
                 gameObjectSpawnable.Spawn(member, pointToSpawn.position, pointToSpawn.rotation);
 

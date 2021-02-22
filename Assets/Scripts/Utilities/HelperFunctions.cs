@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Utilities : MonoBehaviour
+public class HelperFunctions : MonoBehaviour
 {
     #region Random
 

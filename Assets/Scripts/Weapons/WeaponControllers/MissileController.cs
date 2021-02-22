@@ -1,23 +1,22 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(SearchNearestTargetBehaviour), typeof(MoveToTargetBehaviour), typeof(LookAtTargetBehaviour))]
-public class MissileController : MonoBehaviour
+public class MissileController : MonoBehaviour, ISearchAndDestroy
 {
-    private SearchNearestTargetBehaviour searchBehaviour;
-    private IMoveToTarget moveToTargetBehaviour;
-    private ILookAtTarget lookAtTargetBehaviour;
+    private ISearchNearestTarget searcher;
+    private IMoveToTarget mover;
+    private ILookAtTarget looker;
 
     private void Awake()
     {
-        searchBehaviour = GetComponent<SearchNearestTargetBehaviour>();
-        moveToTargetBehaviour = GetComponent<MoveToTargetBehaviour>();
-        lookAtTargetBehaviour = GetComponent<LookAtTargetBehaviour>();
+        searcher = GetComponent<ISearchNearestTarget>();
+        mover = GetComponent<IMoveToTarget>();
+        looker = GetComponent<ILookAtTarget>();
     }
 
     public void SearchAndDestroy()
     {
-        Transform target = searchBehaviour.SearchNearestTarget();
-        lookAtTargetBehaviour.SetTarget(target);
-        moveToTargetBehaviour.SetTarget(target);
+        Transform target = searcher.SearchNearestTarget();
+        looker.SetTarget(target);
+        mover.SetTarget(target);
     }
 }

@@ -2,23 +2,23 @@
 
 public class ScoreManager : MonoBehaviour, IScorable
 {
-    private UpdateScoreBehaviour updateScoreBehaviour;
+    private IUpdateScore scoreUpdater;
     private int score;
 
     private void Awake()
     {
-        updateScoreBehaviour = GetComponent<UpdateScoreBehaviour>();
+        scoreUpdater = GetComponent<IUpdateScore>();
     }
 
     private void Start()
     {
-        updateScoreBehaviour.UpdateScore(score);
+        scoreUpdater.UpdateScore(score);
     }
 
     public void AddScore(int amount)
     {
         score += amount;
 
-        updateScoreBehaviour.UpdateScore(score);
+        scoreUpdater.UpdateScore(score);
     }
 }

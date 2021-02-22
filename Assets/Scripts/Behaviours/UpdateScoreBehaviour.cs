@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UpdateScoreBehaviour : MonoBehaviour
+public class UpdateScoreBehaviour : MonoBehaviour, IUpdateScore
 {
     private Text scoreText;
 

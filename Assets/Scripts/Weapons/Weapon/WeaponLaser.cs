@@ -7,10 +7,10 @@ public class WeaponLaser : WeaponBase
     {
         GameObject laser = gameObjectSpawnable.Spawn(prefab, firePoint.position, firePoint.rotation);
 
-        LaserBehaviour laserBehaviour = laser.GetComponent<LaserBehaviour>();
+        IAddVelocityChangeForce launcher = laser.GetComponent<IAddVelocityChangeForce>();
 
-        Assert.IsNotNull(laserBehaviour, $"{laser.gameObject.name} doesn't have LaserBehaviour component");
+        Assert.IsNotNull(launcher, $"{laser.gameObject.name} doesn't have launcher behaviour component");
 
-        laserBehaviour.AddVelocityChangeForce(transform.up);
+        launcher.AddVelocityChangeForce(transform.up);
     }
 }

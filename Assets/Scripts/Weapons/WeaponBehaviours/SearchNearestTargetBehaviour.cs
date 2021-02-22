@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SearchNearestTargetBehaviour : MonoBehaviour
+public class SearchNearestTargetBehaviour : MonoBehaviour, ISearchNearestTarget
 {
     [SerializeField] private float radius;
     [SerializeField] LayerMask layer;

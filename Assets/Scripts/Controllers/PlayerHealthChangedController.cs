@@ -2,28 +2,28 @@
 
 public class PlayerHealthChangedController : MonoBehaviour
 {
-    private PlayerHealthBehaviour playerHealthBehaviour;
-    private LifebarManager lifebarManager;
+    private IOnPlayerHealthChanged playerHealthChangedEventHandler;
+    private IUpdateLifebar lifebarUpdater;
 
     private void Awake()
     {
-        playerHealthBehaviour = GetComponent<PlayerHealthBehaviour>();
+        playerHealthChangedEventHandler = GetComponent<IOnPlayerHealthChanged>();
 
-        lifebarManager = FindObjectOfType<LifebarManager>();
+        lifebarUpdater = FindObjectOfType<LifebarManager>();
     }
 
     private void OnEnable()
     {
-        playerHealthBehaviour.OnPlayerHealthChanged += PlayerHealthBehaviour_OnPlayerHealthChanged;
+        playerHealthChangedEventHandler.OnPlayerHealthChanged += PlayerHealthChangedEventHandler_OnPlayerHealthChanged;
     }
 
     private void OnDestroy()
     {
-        playerHealthBehaviour.OnPlayerHealthChanged -= PlayerHealthBehaviour_OnPlayerHealthChanged;
+        playerHealthChangedEventHandler.OnPlayerHealthChanged -= PlayerHealthChangedEventHandler_OnPlayerHealthChanged;
     }
 
-    private void PlayerHealthBehaviour_OnPlayerHealthChanged(int currentHealth, int maxHealth)
+    private void PlayerHealthChangedEventHandler_OnPlayerHealthChanged(int currentHealth, int maxHealth)
     {
-        lifebarManager.UpdateLifebar(currentHealth, maxHealth);
+        lifebarUpdater.UpdateLifebar(currentHealth, maxHealth);
     }
 }

@@ -11,7 +11,7 @@ public class WeaponController : MonoBehaviour
 
     private void Update()
     {
-        // Allow weapon swap at run time respecting the open-close principle, but not in the best way.
+        // Allow weapon swap at run time respecting the open-close principle, but not in the best way (game design wise).
         if (Input.GetKeyDown(KeyCode.Q))
         {
             index = (index + 1) % weapons.Length;

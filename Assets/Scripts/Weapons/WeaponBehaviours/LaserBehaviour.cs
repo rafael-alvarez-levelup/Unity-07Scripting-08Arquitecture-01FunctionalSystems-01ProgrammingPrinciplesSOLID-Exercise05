@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class LaserBehaviour : MonoBehaviour
+public class LaserBehaviour : MonoBehaviour, IAddVelocityChangeForce
 {
     [SerializeField] private float force = 15f;
 

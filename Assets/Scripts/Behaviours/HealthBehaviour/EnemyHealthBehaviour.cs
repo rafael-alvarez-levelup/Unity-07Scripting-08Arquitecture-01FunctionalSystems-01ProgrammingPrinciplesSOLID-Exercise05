@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 
-public class EnemyHealthBehaviour : HealthBehaviour
+public class EnemyHealthBehaviour : HealthBehaviour, IOnEnemyDeath
 {
-    public delegate void EnemyDeathEventHandler();
     public event EnemyDeathEventHandler OnEnemyDeath;
 
     [SerializeField] private float damageMultiplier;

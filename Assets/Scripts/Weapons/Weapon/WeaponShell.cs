@@ -19,11 +19,11 @@ public class WeaponShell : WeaponBase
 
             GameObject shell = gameObjectSpawnable.Spawn(prefab, firePoint.position, Quaternion.Euler(direction));
 
-            ShellBehaviour shellBehaviour = shell.GetComponent<ShellBehaviour>();
+            IAddVelocityChangeForce launcher = shell.GetComponent<IAddVelocityChangeForce>();
 
-            Assert.IsNotNull(shellBehaviour, $"{shell.gameObject.name} doesn't have ShellBehaviour component");
+            Assert.IsNotNull(launcher, $"{shell.gameObject.name} doesn't have launcher behaviour component");
 
-            shellBehaviour.AddVelocityChangeForce(direction.normalized);
+            launcher.AddVelocityChangeForce(direction.normalized);
         }
     }
 }

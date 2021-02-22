@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ShellBehaviour : MonoBehaviour
+public class ShellBehaviour : MonoBehaviour, IAddVelocityChangeForce
 {
     [SerializeField] private float force = 10f;
 

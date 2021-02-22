@@ -2,13 +2,13 @@
 
 public class InputRigidbodyMovementController : MonoBehaviour
 {
-    private RigidbodyMovementBehaviour rigidbodyMovementBehaviour;
+    private IMovable movable;
     private EngineBehaviour engineBehaviour;
     private float horizontalMovement;
 
     private void Awake()
     {
-        rigidbodyMovementBehaviour = GetComponent<RigidbodyMovementBehaviour>();
+        movable = GetComponent<RigidbodyMovementBehaviour>();
         engineBehaviour = GetComponent<EngineBehaviour>();
     }
 
@@ -22,6 +22,6 @@ public class InputRigidbodyMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         // Already handles a null velocity.
-        rigidbodyMovementBehaviour.Move(transform.right * horizontalMovement);
+        movable.Move(transform.right * horizontalMovement);
     }
 }

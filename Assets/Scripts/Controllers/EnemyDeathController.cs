@@ -2,30 +2,30 @@
 
 public class EnemyDeathController : MonoBehaviour
 {
-    private EnemyHealthBehaviour enemyHealthBehaviour;
+    private IOnEnemyDeath enemyDeathEventHandler;
     private IAddScorable addScorable;
-    private IScorable scoreManager;
+    private IScorable scorable;
 
     private void Awake()
     {
-        enemyHealthBehaviour = GetComponent<EnemyHealthBehaviour>();
+        enemyDeathEventHandler = GetComponent<IOnEnemyDeath>();
         addScorable = GetComponent<IAddScorable>();
 
-        scoreManager = FindObjectOfType<ScoreManager>();
+        scorable = FindObjectOfType<ScoreManager>();
     }
 
     private void OnEnable()
     {
-        enemyHealthBehaviour.OnEnemyDeath += EnemyHealthBehaviour_OnEnemyDeath;
+        enemyDeathEventHandler.OnEnemyDeath += EnemyDeathEventHandler_OnEnemyDeath;
     }
 
     private void OnDestroy()
     {
-        enemyHealthBehaviour.OnEnemyDeath -= EnemyHealthBehaviour_OnEnemyDeath;
+        enemyDeathEventHandler.OnEnemyDeath -= EnemyDeathEventHandler_OnEnemyDeath;
     }
 
-    private void EnemyHealthBehaviour_OnEnemyDeath()
+    private void EnemyDeathEventHandler_OnEnemyDeath()
     {
-        addScorable.AddScore(scoreManager);
+        addScorable.AddScore(scorable);
     }
 }

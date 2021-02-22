@@ -7,10 +7,10 @@ public class WeaponMissile : WeaponBase
     {
         GameObject missile = gameObjectSpawnable.Spawn(prefab, firePoint.position, firePoint.rotation);
 
-        MissileController missileController = missile.GetComponent<MissileController>();
+        ISearchAndDestroy controller = missile.GetComponent<ISearchAndDestroy>();
 
-        Assert.IsNotNull(missileController, $"{missile.gameObject.name} doesn't have MissileController component");
+        Assert.IsNotNull(controller, $"{missile.gameObject.name} doesn't have controller component");
 
-        missileController.SearchAndDestroy();
+        controller.SearchAndDestroy();
     }
 }

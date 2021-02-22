@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LifebarManager : MonoBehaviour
+public class LifebarManager : MonoBehaviour, IUpdateLifebar
 {
     [SerializeField] private Image fillImage;
 

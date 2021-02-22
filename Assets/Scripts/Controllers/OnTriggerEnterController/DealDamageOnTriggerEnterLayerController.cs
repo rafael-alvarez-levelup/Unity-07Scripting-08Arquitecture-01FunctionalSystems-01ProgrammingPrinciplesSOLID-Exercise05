@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-[RequireComponent(typeof(DealDamageBehaviour))]
 public class DealDamageOnTriggerEnterLayerController : OnTriggerEnterLayerControllerBase
 {
     private IDealDamageable dealDamageable;
