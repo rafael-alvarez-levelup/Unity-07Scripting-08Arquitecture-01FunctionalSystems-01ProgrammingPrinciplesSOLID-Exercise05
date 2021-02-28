@@ -9,13 +9,11 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     [SerializeField] private GameObject explosionPrefab;
 
     protected int currentHealth;
-    protected IGameObjectSpawnable gameObjectSpawnable;
 
     private ISelfDestroyable destroyable;
 
     private void Awake()
     {
-        gameObjectSpawnable = GetComponent<IGameObjectSpawnable>();
         destroyable = GetComponent<ISelfDestroyable>();
 
         currentHealth = healthData.Health;
@@ -25,7 +23,7 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
     {
         currentHealth = Math.Max(0, currentHealth - amount);
 
-        gameObjectSpawnable.Spawn(damageEffectPrefab, transform.position, transform.rotation);
+        Instantiate(damageEffectPrefab, transform.position, transform.rotation);
 
         if (currentHealth == 0)
         {
@@ -35,7 +33,7 @@ public class HealthBehaviour : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
-        gameObjectSpawnable.Spawn(explosionPrefab, transform.position, transform.rotation);
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
 
         destroyable.Destroy();
     }

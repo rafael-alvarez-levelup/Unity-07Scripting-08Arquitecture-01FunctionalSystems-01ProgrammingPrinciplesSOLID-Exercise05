@@ -2,12 +2,12 @@
 
 public class PlayerHealthChangedController : MonoBehaviour
 {
-    private IOnPlayerHealthChanged playerHealthChangedEventHandler;
+    private IPlayerHealthChangedEventHandler playerHealthChangedEventHandler;
     private IUpdateLifebar lifebarUpdater;
 
     private void Awake()
     {
-        playerHealthChangedEventHandler = GetComponent<IOnPlayerHealthChanged>();
+        playerHealthChangedEventHandler = GetComponent<IPlayerHealthChangedEventHandler>();
 
         lifebarUpdater = FindObjectOfType<LifebarManager>();
     }

@@ -163,7 +163,6 @@ GameObject:
   m_Component:
   - component: {fileID: 598397291}
   - component: {fileID: 598397292}
-  - component: {fileID: 598397293}
   m_Layer: 0
   m_Name: SpawnController
   m_TagString: Untagged
@@ -212,18 +211,6 @@ MonoBehaviour:
   - {fileID: 758858154}
   - {fileID: 209163220}
   delay: 2
---- !u!114 &598397293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 598397290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e83bdd551c40c945a94b21f305dff14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,5 +696,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8196441105246603081, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c9816fa979b06ba4e9c222b529370cc2, type: 3}

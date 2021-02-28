@@ -6,14 +6,7 @@ public abstract class WeaponBase : MonoBehaviour
 
     [SerializeField] private float fireRate;
 
-    protected IGameObjectSpawnable gameObjectSpawnable;
-
     private float nextFireTime;
-
-    private void Awake()
-    {
-        gameObjectSpawnable = GetComponent<IGameObjectSpawnable>();
-    }
 
     public abstract void Fire(Transform firePoint);
 

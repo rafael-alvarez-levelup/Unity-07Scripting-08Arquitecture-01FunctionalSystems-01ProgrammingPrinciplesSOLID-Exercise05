@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyHealthBehaviour : HealthBehaviour, IOnEnemyDeath
+public class EnemyHealthBehaviour : HealthBehaviour, IEnemyDeathEventHandler
 {
     public event EnemyDeathEventHandler OnEnemyDeath;
 
@@ -22,7 +22,7 @@ public class EnemyHealthBehaviour : HealthBehaviour, IOnEnemyDeath
     {
         if (OnEnemyDeath != null)
         {
-            OnEnemyDeath();
+            OnEnemyDeath.Invoke();
         }
     }
 }

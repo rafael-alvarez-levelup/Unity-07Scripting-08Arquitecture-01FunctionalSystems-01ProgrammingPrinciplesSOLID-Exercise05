@@ -2,13 +2,13 @@
 
 public class EnemyDeathController : MonoBehaviour
 {
-    private IOnEnemyDeath enemyDeathEventHandler;
+    private IEnemyDeathEventHandler enemyDeathEventHandler;
     private IAddScorable addScorable;
     private IScorable scorable;
 
     private void Awake()
     {
-        enemyDeathEventHandler = GetComponent<IOnEnemyDeath>();
+        enemyDeathEventHandler = GetComponent<IEnemyDeathEventHandler>();
         addScorable = GetComponent<IAddScorable>();
 
         scorable = FindObjectOfType<ScoreManager>();

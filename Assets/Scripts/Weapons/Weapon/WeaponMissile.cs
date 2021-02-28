@@ -5,7 +5,7 @@ public class WeaponMissile : WeaponBase
 {
     public override void Fire(Transform firePoint)
     {
-        GameObject missile = gameObjectSpawnable.Spawn(prefab, firePoint.position, firePoint.rotation);
+        GameObject missile = Instantiate(prefab, firePoint.position, firePoint.rotation);
 
         ISearchAndDestroy controller = missile.GetComponent<ISearchAndDestroy>();
 

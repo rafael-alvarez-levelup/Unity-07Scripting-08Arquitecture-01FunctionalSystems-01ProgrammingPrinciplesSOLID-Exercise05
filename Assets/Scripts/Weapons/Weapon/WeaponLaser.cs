@@ -5,7 +5,7 @@ public class WeaponLaser : WeaponBase
 {
     public override void Fire(Transform firePoint)
     {
-        GameObject laser = gameObjectSpawnable.Spawn(prefab, firePoint.position, firePoint.rotation);
+        GameObject laser = Instantiate(prefab, firePoint.position, firePoint.rotation);
 
         IAddVelocityChangeForce launcher = laser.GetComponent<IAddVelocityChangeForce>();
 

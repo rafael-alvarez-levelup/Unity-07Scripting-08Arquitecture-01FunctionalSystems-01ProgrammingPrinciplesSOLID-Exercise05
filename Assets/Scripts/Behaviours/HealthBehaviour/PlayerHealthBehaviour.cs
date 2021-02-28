@@ -1,9 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerHealthBehaviour : HealthBehaviour, IHealable, IOnPlayerHealthChanged
+public class PlayerHealthBehaviour : HealthBehaviour, IHealable, IPlayerHealthChangedEventHandler, IPlayerDeathEventHandler
 {
-    public event OnPlayerHealthChangedEventHandler OnPlayerHealthChanged;
+    public event PlayerHealthChangedEventHandler OnPlayerHealthChanged;
+    public event PlayerDeathEventHandler OnPlayerDeath;
 
     [SerializeField] private GameObject healEffectPrefab;
 
@@ -14,15 +15,30 @@ public class PlayerHealthBehaviour : HealthBehaviour, IHealable, IOnPlayerHealth
         PlayerHealthChanged();
     }
 
+    protected override void Die()
+    {
+        base.Die();
+
+        PlayerDeath();
+    }
+
     public void Heal(int amount)
     {
         if (currentHealth < healthData.Health)
         {
             currentHealth = Math.Min(currentHealth + amount, healthData.Health);
 
-            gameObjectSpawnable.Spawn(healEffectPrefab, transform.position, transform.rotation);
+            Instantiate(healEffectPrefab, transform.position, transform.rotation);
 
             PlayerHealthChanged();
+        }
+    }
+
+    private void PlayerDeath()
+    {
+        if (OnPlayerDeath != null)
+        {
+            OnPlayerDeath.Invoke();
         }
     }
 

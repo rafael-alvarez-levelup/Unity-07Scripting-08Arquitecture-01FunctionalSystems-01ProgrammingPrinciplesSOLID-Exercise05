@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 9132587528608641076}
   - component: {fileID: 4940852271655754507}
   - component: {fileID: 7114931682655272287}
-  - component: {fileID: -8196441105246603081}
   - component: {fileID: 6503570054819687955}
   - component: {fileID: 7999109447582737349}
   - component: {fileID: 1309135510082272469}
@@ -172,18 +171,6 @@ MonoBehaviour:
   damageEffectPrefab: {fileID: 100012, guid: 9f26cbe121c944340ace11129d833ffb, type: 3}
   explosionPrefab: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 3}
   healEffectPrefab: {fileID: 100012, guid: 552d94570f8ac344ea34ae6b62954657, type: 3}
---- !u!114 &-8196441105246603081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 110440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e83bdd551c40c945a94b21f305dff14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6503570054819687955
 MonoBehaviour:
   m_ObjectHideFlags: 0

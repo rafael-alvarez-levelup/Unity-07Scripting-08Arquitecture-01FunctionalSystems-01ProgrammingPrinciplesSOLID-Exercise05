@@ -15,16 +15,9 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private float delay;
 
-    private IGameObjectSpawnable gameObjectSpawnable;
-
     #endregion
 
     #region Unity Methods
-
-    private void Awake()
-    {
-        gameObjectSpawnable = GetComponent<IGameObjectSpawnable>();
-    }
 
     private void Start()
     {
@@ -47,7 +40,7 @@ public class SpawnController : MonoBehaviour
             {
                 Transform pointToSpawn = spawnPoints[HelperFunctions.GetRandomIndex(0, spawnPoints.Count)];
 
-                gameObjectSpawnable.Spawn(member, pointToSpawn.position, pointToSpawn.rotation);
+                Instantiate(member, pointToSpawn.position, pointToSpawn.rotation);
 
                 yield return memberDelay;
             }
